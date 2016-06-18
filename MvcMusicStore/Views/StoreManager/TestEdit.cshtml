@@ -1,0 +1,45 @@
+﻿@model MvcMusicStore.Models.Album
+           @{
+               ViewBag.Title = "Viewbag from page";
+               var list = new List<MvcMusicStore.Models.Album>();
+               
+           }
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(false, "Test Warning",new {@class="text-danger" })
+
+        <fieldset>
+            <legend>
+                Edit Album
+            </legend>
+            <p>
+                @Html.LabelFor(m => m.GenreId)
+                @*@Html.DropDownListFor(m => m.GenreId, ViewBag.Genre as SelectList)*@
+            </p>
+            <p>
+                @Html.TextBoxFor(m=>m.Title)
+                @Html.ValidationMessageFor(m=>m.Title)
+            </p>
+                @*<div>@Html.ValidationMessage("AlbumsMultiSelect","This error message come from View")</div>
+                <div>@Html.ValidationMessage("AlbumsMultiSelect")</div>
+                
+              @Html.Label("Title")  <div>                @Html.TextBox("Title", Model.Title)</div>
+               @Html.Label("text") <div> @Html.TextArea("text", "hello<br/>world", 10, 80, null)</div> 
+                <div>@Html.DropDownList("Albums", "Select the Album");</div>
+                <div>@Html.ListBox("AlbumsMultiSelect")</div>
+                @Html.Label("Title")  <div>                @Html.TextBox("Title")</div>*@
+                <input type="submit" value="Save" />
+            
+        </fieldset>
+        @Html.ActionLink("my link to index","Index")
+        @Html.RouteLink("Sample route link", new { action="Index"})
+        @Url.Content("~/Scripts/respond.js")
+        
+        
+
+        //Html.RenderPartial("Index", list);
+
+        
+    }
+@*@{
+    Html.RenderAction("Test123");
+}*@
