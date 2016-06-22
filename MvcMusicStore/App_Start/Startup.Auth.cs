@@ -32,7 +32,7 @@ namespace MvcMusicStore
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication();
+            app.UseGoogleAuthentication(clientId: "718796321646-d2ac3cturgkc4n62pq2rrcccmg8tf854.apps.googleusercontent.com", clientSecret: "zIDJxeSQu_LvahfxLNdAxOZo");
         }
     }
 }

@@ -144,5 +144,10 @@ namespace MvcMusicStore.Controllers
             ViewBag.AlbumsMultiSelect = new MultiSelectList(albums, "AlbumID", "Title", albums.FirstOrDefault().AlbumId.ToString());
             return View("TestEdit", new Album() { AlbumId = 1, Title = "For those about rock we will salute you" });
         }
+        public ActionResult CheckUserNameExists(string userName)
+        {
+
+            return Json(true,JsonRequestBehavior.AllowGet);
+        }
     }
 }
